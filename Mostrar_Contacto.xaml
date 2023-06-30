@@ -1,0 +1,35 @@
+﻿<Window x:Class="Fundacion.Mostrar_Contacto"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Fundacion"
+        mc:Ignorable="d"
+        Title="Mostrar_Contacto" Height="450" Width="800">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="/pexels-karolina-grabowska-5485125.jpg"/>
+        </Grid.Background>
+        <Label Content="Documento Afiliado" HorizontalAlignment="Left" Margin="29,38,0,0" VerticalAlignment="Top" FontFamily="Arial Rounded MT Bold"/>
+        <TextBox x:Name="txtmostar_id_Afil" HorizontalAlignment="Left" Margin="29,69,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="136" FontFamily="Arial Rounded MT Bold" IsReadOnly="True"/>
+        <Label Content="Documento Contacto" HorizontalAlignment="Left" Margin="29,145,0,0" VerticalAlignment="Top" FontFamily="Arial Rounded MT Bold"/>
+        <TextBox x:Name="txtmostrar_doc_cont" HorizontalAlignment="Left" Margin="29,176,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="136" FontFamily="Arial Rounded MT Bold" IsReadOnly="True"/>
+        <Label Content="Nombre Contacto" HorizontalAlignment="Left" Margin="215,145,0,0" VerticalAlignment="Top" FontFamily="Arial Rounded MT Bold"/>
+        <TextBox x:Name="txtmostrar_nombre_cont" HorizontalAlignment="Left" Margin="215,176,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="136" FontFamily="Arial Rounded MT Bold" IsReadOnly="True"/>
+        <Label Content="Apellidos Contacto" HorizontalAlignment="Left" Margin="384,145,0,0" VerticalAlignment="Top" FontFamily="Arial Rounded MT Bold"/>
+        <TextBox x:Name="txtmostrar_apell_cont" HorizontalAlignment="Left" Margin="384,176,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="136" FontFamily="Arial Rounded MT Bold" IsReadOnly="True"/>
+        <Label Content="Parentesco" HorizontalAlignment="Left" Margin="577,145,0,0" VerticalAlignment="Top" FontFamily="Arial Rounded MT Bold"/>
+        <TextBox x:Name="txtmostrar_parentesco" HorizontalAlignment="Left" Margin="577,176,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="136" FontFamily="Arial Rounded MT Bold" IsReadOnly="True"/>
+        <Label Content="Telefono" HorizontalAlignment="Left" Margin="31,223,0,0" VerticalAlignment="Top" FontFamily="Arial Rounded MT Bold"/>
+        <TextBox x:Name="txtmostrar_telefo_cont" HorizontalAlignment="Left" Margin="29,249,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="136" FontFamily="Arial Rounded MT Bold" IsReadOnly="True"/>
+        <Label Content="Celular" HorizontalAlignment="Left" Margin="215,223,0,0" VerticalAlignment="Top" FontFamily="Arial Rounded MT Bold"/>
+        <TextBox x:Name="txtmostrar_cel_cont" HorizontalAlignment="Left" Margin="215,249,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="136" FontFamily="Arial Rounded MT Bold" IsReadOnly="True"/>
+        <Label Content="Direccion" HorizontalAlignment="Left" Margin="384,223,0,0" VerticalAlignment="Top" FontFamily="Arial Rounded MT Bold"/>
+        <Label Content="Ciudad" HorizontalAlignment="Left" Margin="577,223,0,0" VerticalAlignment="Top" FontFamily="Arial Rounded MT Bold"/>
+        <TextBox x:Name="txtmostrar_direc_cont" HorizontalAlignment="Left" Margin="384,249,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="136" FontFamily="Arial Rounded MT Bold" IsReadOnly="True"/>
+        <TextBox x:Name="txtmostrar_ciudad_cont" HorizontalAlignment="Left" Margin="577,249,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="136" FontFamily="Arial Rounded MT Bold" IsReadOnly="True"/>
+        <Label Content="Email" HorizontalAlignment="Left" Margin="29,304,0,0" VerticalAlignment="Top" FontFamily="Arial Rounded MT Bold"/>
+        <TextBox x:Name="txtmostrar_email_cont" HorizontalAlignment="Left" Margin="29,335,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="186" FontFamily="Arial Rounded MT Bold" IsReadOnly="True"/>
+        <Button Content="Volver" HorizontalAlignment="Left" Margin="660,369,0,0" VerticalAlignment="Top" Width="85" FontFamily="Arial Rounded MT Bold" Click="Button_Click" Background="#FFCBA2E4"/>
+    </Grid>
+</Window>

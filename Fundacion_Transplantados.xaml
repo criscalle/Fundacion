@@ -1,0 +1,551 @@
+﻿<Window x:Class="Fundacion.Fundacion_Transplantados"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Fundacion"
+        mc:Ignorable="d"
+        Title="Fundacion_Transplantados" Height="550" Width="900">
+    <Grid>
+        <TabControl>
+            <TabItem Header="Usuarios" FontFamily="Arial">
+                <Grid>
+                    <Grid.Background>
+                        <ImageBrush ImageSource="/pexels-karolina-grabowska-5485125.jpg"/>
+                    </Grid.Background>
+                    <ListView x:Name="Lista_Usuarios" d:ItemsSource="{d:SampleData ItemCount=1}" Margin="36,174,0,0" Background="#FFFBD4FF" Height="255" VerticalAlignment="Top" HorizontalAlignment="Left" Width="561">
+                        <ListView.ItemTemplate>
+                            <DataTemplate/>
+                        </ListView.ItemTemplate>
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Header="Nombre" Width="180" DisplayMemberBinding="{Binding Name}"/>
+                                <GridViewColumn Header="Apellido" Width="180" DisplayMemberBinding="{Binding Lastname}"/>
+                                <GridViewColumn Header="Usuario" Width="110" DisplayMemberBinding="{Binding User}"/>
+                                <GridViewColumn Header="Rol" Width="90" DisplayMemberBinding="{Binding Rol}"/>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                    <Label Content="Nombre" Margin="36,10,0,0" FontFamily="Arial" HorizontalAlignment="Left" Width="53" Height="24" VerticalAlignment="Top"/>
+                    <Label Content="Apellido" HorizontalAlignment="Left" Margin="206,10,0,0" VerticalAlignment="Top" FontFamily="Arial"/>
+                    <Label Content="Usuario" HorizontalAlignment="Left" Margin="377,10,0,0" VerticalAlignment="Top" FontFamily="Arial"/>
+                    <Label Content="Contraseña" HorizontalAlignment="Left" Margin="36,59,0,0" FontFamily="Arial" Height="24" VerticalAlignment="Top"/>
+                    <Label Content="Confirmar Contraseña" HorizontalAlignment="Left" Margin="206,59,0,0" VerticalAlignment="Top" FontFamily="Arial"/>
+                    <TextBox x:Name="txtName" HorizontalAlignment="Left" Margin="36,36,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                    <TextBox x:Name="txtLastname" HorizontalAlignment="Left" Margin="206,36,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                    <TextBox x:Name="txtUser" HorizontalAlignment="Left" Margin="377,36,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                    <PasswordBox x:Name="txtPassword" HorizontalAlignment="Left" Margin="36,90,0,0"  VerticalAlignment="Top" Width="120"/>
+                    <PasswordBox x:Name="txtconfirpassword" HorizontalAlignment="Left" Margin="206,90,0,0"  VerticalAlignment="Top" Width="120"/>
+                    <Button x:Name="BtnBuscar" Content="Buscar" Margin="667,88,0,0" RenderTransformOrigin="0.312,0.262" Background="#FF82E8A4" Click="BtnBuscar_Click" Height="18" VerticalAlignment="Top" HorizontalAlignment="Left" Width="160"/>
+                    <Button x:Name="BtnCrear" Content="Crear" HorizontalAlignment="Left" Margin="667,174,0,0" VerticalAlignment="Top" Width="160" RenderTransformOrigin="0.312,0.262" Background="#FF82E8A4" Click="BtnCrear_Click"/>
+                    <Button x:Name="BtnEditar" Content="Editar" HorizontalAlignment="Left" Margin="667,217,0,0" VerticalAlignment="Top" Width="160" RenderTransformOrigin="0.312,0.262" Background="#FF82E8A4" Click="BtnEditar_Click"/>
+                    <Button x:Name="BtnEliminar" Content="Eliminar" HorizontalAlignment="Left" Margin="667,261,0,0" VerticalAlignment="Top" Width="160" RenderTransformOrigin="0.312,0.262" Background="#FFCBA2E4" Click="BtnEliminar_Click"/>
+                    <Button x:Name="BtnLimpiar" Content="Limpiar" HorizontalAlignment="Left" Margin="667,302,0,0" VerticalAlignment="Top" Width="160" RenderTransformOrigin="0.312,0.262" Background="#FFCBA2E4" Click="BtnLimpiar_Click"/>
+
+                    <Label Content="Usuarios Activos" HorizontalAlignment="Left" Margin="36,143,0,0" VerticalAlignment="Top" Width="156" FontSize="16" Foreground="#FFD879E8"/>
+                    <ComboBox x:Name="comboRol" HorizontalAlignment="Left" Margin="378,84,0,0" VerticalAlignment="Top" Width="120">
+                        <ComboBoxItem IsSelected="True">
+                            <TextBlock>User</TextBlock>
+                        </ComboBoxItem>
+                        <ComboBoxItem>
+                            <TextBlock>Admon</TextBlock>
+                        </ComboBoxItem>
+                    </ComboBox>
+                    <Label Content="Rol" HorizontalAlignment="Left" Margin="377,59,0,373"/>
+                    <Button x:Name="BtnSalir" Content="Salir" HorizontalAlignment="Left" Margin="769,394,0,0" VerticalAlignment="Top" Width="58" Background="#FFF98FBB" Click="BtnSalir_Click"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Afiliado" FontFamily="Arial">
+                <Grid x:Name="btnDelete">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.Background>
+                        <ImageBrush ImageSource="/pexels-karolina-grabowska-5485125.jpg"/>
+                    </Grid.Background>
+                    <Label Content="Registro Afiliado" HorizontalAlignment="Left" Margin="11,10,0,0" VerticalAlignment="Top" FontSize="14" FontWeight="Bold" Height="26" Width="121"/>
+                    <Label Content="Documento" HorizontalAlignment="Left" Margin="15,37,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.455,-0.186" Height="24" Width="71"/>
+                    <TextBox x:Name="txtid" HorizontalAlignment="Left" Margin="20,63,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="134" Height="16"/>
+                    <ComboBox x:Name="comboid" HorizontalAlignment="Left" Margin="183,63,0,0" VerticalAlignment="Top" Width="54" Height="18">
+                        <ComboBoxItem IsSelected="True">
+                            <TextBlock>C.C</TextBlock>
+                        </ComboBoxItem>
+                        <ComboBoxItem>
+                            <TextBlock>T.I</TextBlock>
+                        </ComboBoxItem>
+                        <ComboBoxItem>
+                            <TextBlock>R.C</TextBlock>
+                        </ComboBoxItem>
+                        <ComboBoxItem>
+                            <TextBlock>P.E.P</TextBlock>
+                        </ComboBoxItem>
+                        <ComboBoxItem>
+                            <TextBlock>Pasaporte</TextBlock>
+                        </ComboBoxItem>
+                    </ComboBox>
+                    <TextBox x:Name="txtNombre" HorizontalAlignment="Left" Margin="255,63,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="134" Height="16"/>
+                    <Label Content="Nombres" HorizontalAlignment="Left" Margin="252,37,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.455,-0.186" Height="24" Width="59"/>
+                    <TextBox x:Name="txtapellidos" HorizontalAlignment="Left" Margin="411,61,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="134
+                             " Height="16"/>
+                    <Label Content="Apellidos" HorizontalAlignment="Left" Margin="409,37,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.455,-0.186" Height="24" Width="59"/>
+                    <Label Content="Genero" HorizontalAlignment="Left" Margin="565,36,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.455,-0.186" Height="24" Width="50"/>
+                    <ComboBox x:Name="combogenero" HorizontalAlignment="Left" Margin="565,62,0,0" VerticalAlignment="Top" Width="134" Height="18">
+                        <ComboBoxItem IsSelected="True">
+                            <TextBlock>Seleccione</TextBlock>
+                        </ComboBoxItem>
+                        <ComboBoxItem>
+                            <TextBlock>Masculino</TextBlock>
+                        </ComboBoxItem>
+                        <ComboBoxItem>
+                            <TextBlock>Femenino</TextBlock>
+                        </ComboBoxItem>
+                        <ComboBoxItem>
+                            <TextBlock>No Binario</TextBlock>
+                        </ComboBoxItem>
+                    </ComboBox>
+                    <Label Content="Departamento" HorizontalAlignment="Left" Margin="20,94,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.455,-0.186" Height="24" Width="86"/>
+                    <ComboBox x:Name="combodep" HorizontalAlignment="Left" Margin="20,118,0,0" VerticalAlignment="Top" Width="134" Height="18" SelectionChanged="combodep_SelectionChanged"/>
+                    <ComboBox x:Name="combomun" HorizontalAlignment="Left" Margin="255,118,0,0" VerticalAlignment="Top" Width="134" Height="18"/>
+                    <Label Content="Municipio" HorizontalAlignment="Left" Margin="255,94,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.228,0.434" Height="24" Width="61"/>
+                    <Label Content="Comuna (Medellin)" HorizontalAlignment="Left" Margin="569,94,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.228,0.434" Height="24" Width="111"/>
+                    <ComboBox x:Name="combocomuna" HorizontalAlignment="Left" Margin="565,118,0,0" VerticalAlignment="Top" Width="134" Height="18">
+                        <ComboBoxItem IsSelected="True">
+                            <TextBlock>No aplica</TextBlock>
+                        </ComboBoxItem>
+                        <ComboBoxItem>
+                            <TextBlock>1 - Popular</TextBlock>
+                        </ComboBoxItem>
+                        <ComboBoxItem>
+                            <TextBlock>2 - Santa Cruz</TextBlock>
+                        </ComboBoxItem>
+                        <ComboBoxItem>
+                            <TextBlock>3 - Manrique</TextBlock>
+                        </ComboBoxItem>
+                        <ComboBoxItem>
+                            <TextBlock>Atlantico</TextBlock>
+                        </ComboBoxItem>
+                        <ComboBoxItem>
+                            <TextBlock>5 - Castilla</TextBlock>
+                        </ComboBoxItem>
+                        <ComboBoxItem>
+                            <TextBlock>6 - 12 de Octubre</TextBlock>
+                        </ComboBoxItem>
+                        <ComboBoxItem>
+                            <TextBlock>7 - Robledo</TextBlock>
+                        </ComboBoxItem>
+                        <ComboBoxItem>
+                            <TextBlock>8 - Villa Hermosa</TextBlock>
+                        </ComboBoxItem>
+                        <ComboBoxItem>
+                            <TextBlock>9 - Buenos Aires</TextBlock>
+                        </ComboBoxItem>
+                        <ComboBoxItem>
+                            <TextBlock>10 - La Candelaria</TextBlock>
+                        </ComboBoxItem>
+                        <ComboBoxItem>
+                            <TextBlock>11 - Laureles-estadio</TextBlock>
+                        </ComboBoxItem>
+                        <ComboBoxItem>
+                            <TextBlock>12 - La America</TextBlock>
+                        </ComboBoxItem>
+                        <ComboBoxItem>
+                            <TextBlock>13 - San Javier</TextBlock>
+                        </ComboBoxItem>
+                        <ComboBoxItem>
+                            <TextBlock>14 - Poblado</TextBlock>
+                        </ComboBoxItem>
+                        <ComboBoxItem>
+                            <TextBlock>15 - Guayabal</TextBlock>
+                        </ComboBoxItem>
+                        <ComboBoxItem>
+                            <TextBlock>16 - Belen</TextBlock>
+                        </ComboBoxItem>
+                        <ComboBoxItem>
+                            <TextBlock>50 - San sebastian de Palmitas</TextBlock>
+                        </ComboBoxItem>
+                        <ComboBoxItem>
+                            <TextBlock>60 - San cristobal</TextBlock>
+                        </ComboBoxItem>
+                        <ComboBoxItem>
+                            <TextBlock>70 - Altavista</TextBlock>
+                        </ComboBoxItem>
+                        <ComboBoxItem>
+                            <TextBlock>80 - Prado</TextBlock>
+                        </ComboBoxItem>
+                        <ComboBoxItem>
+                            <TextBlock>90 - Santa Elena</TextBlock>
+                        </ComboBoxItem>
+                    </ComboBox>
+                    <Label Content="Telefono" HorizontalAlignment="Left" Margin="255,156,0,0" VerticalAlignment="Top" Height="24" Width="55"/>
+                    <TextBox x:Name="txttelefono" HorizontalAlignment="Left" Margin="255,177,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="134" Height="16"/>
+                    <Label Content="Fecha nacimiento" HorizontalAlignment="Left" Margin="567,158,0,0" VerticalAlignment="Top" Height="24" Width="105"/>
+                    <TextBox x:Name="txtfecha_nac" HorizontalAlignment="Left" Margin="567,179,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="134" Height="16"/>
+                    <Label Content="Direccion" HorizontalAlignment="Left" Margin="21,156,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.455,-0.186" Height="24" Width="60"/>
+                    <TextBox x:Name="txtdireccion" HorizontalAlignment="Left" Margin="21,177,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="134" Height="16"/>
+                    <Label Content="Email" HorizontalAlignment="Left" Margin="410,158,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.571,0.666" Height="24" Width="40"/>
+                    <TextBox x:Name="txtemail" HorizontalAlignment="Left" Margin="411,177,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="134" Height="16"/>
+                    <Label Content="Fecha afiliacion" HorizontalAlignment="Left" Margin="18,219,0,0" VerticalAlignment="Top" Height="24" Width="93"/>
+                    <TextBox x:Name="txtfecha_afil" HorizontalAlignment="Left" Margin="19,245,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="134" Height="16"/>
+                    <Label Content="Barrio" HorizontalAlignment="Left" Margin="409,94,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.507,0.588" Height="24" Width="42"/>
+                    <TextBox x:Name="txtbarrio" HorizontalAlignment="Left" Margin="411,118,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="134" Height="16"/>
+                    <Image x:Name="calendario" HorizontalAlignment="Left" Height="21" Margin="701,178,0,0" VerticalAlignment="Top" Width="25" Source="/calendar-icon_34471.png" PreviewMouseLeftButtonDown="calendario_PreviewMouseLeftButtonDown"/>
+
+                    <Image x:Name="calen_afil" HorizontalAlignment="Left" Height="20" Margin="158,0,0,0" VerticalAlignment="Center" Width="25
+                           " Source="/calendar-icon_34471.png" PreviewMouseLeftButtonDown="calen_afil_PreviewMouseLeftButtonDown"/>
+
+                    <Label Content="EPS" HorizontalAlignment="Left" Margin="255,219,0,0" VerticalAlignment="Top" Height="24" Width="34"/>
+                    <TextBox x:Name="txteps" HorizontalAlignment="Left" Margin="255,242,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="134" Height="16"/>
+                    <Label Content="IPS" HorizontalAlignment="Left" Margin="411,219,0,0" VerticalAlignment="Top" Height="24" Width="29"/>
+                    <TextBox x:Name="txtips" HorizontalAlignment="Left" Margin="409,242,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="134" Height="16"/>
+                    <Label Content="Condicion" HorizontalAlignment="Left" Margin="567,220,0,0" VerticalAlignment="Top" Height="24" Width="63"/>
+                    <ComboBox x:Name="combocondicion" HorizontalAlignment="Left" Margin="567,243,0,0" VerticalAlignment="Top" Width="134" Height="18">
+                        <ComboBoxItem IsSelected="True">
+                            <TextBlock>Seleccione</TextBlock>
+                        </ComboBoxItem>
+                        <ComboBoxItem>
+                            <TextBlock>Pre</TextBlock>
+                        </ComboBoxItem>
+                        <ComboBoxItem>
+                            <TextBlock>Transplantado</TextBlock>
+                        </ComboBoxItem>
+                    </ComboBox>
+                    <Label Content="Pension" HorizontalAlignment="Left" Margin="26,280,0,0" VerticalAlignment="Top" Height="24" Width="53"/>
+                    <ComboBox x:Name="combopension" HorizontalAlignment="Left" Margin="20,304,0,0" VerticalAlignment="Top" Width="134" Height="18">
+                        <ComboBoxItem IsSelected="True">
+                            <TextBlock>Seleccione</TextBlock>
+                        </ComboBoxItem>
+                        <ComboBoxItem>
+                            <TextBlock>SI</TextBlock>
+                        </ComboBoxItem>
+                        <ComboBoxItem>
+                            <TextBlock>NO</TextBlock>
+                        </ComboBoxItem>
+                    </ComboBox>
+                    <Label Content="Sisben" HorizontalAlignment="Left" Margin="255,280,0,0" VerticalAlignment="Top" Height="24" Width="47"/>
+                    <ComboBox x:Name="combosisben" HorizontalAlignment="Left" Margin="255,306,0,0" VerticalAlignment="Top" Width="134" Height="18">
+                        <ComboBoxItem IsSelected="True">
+                            <TextBlock>Seleccione</TextBlock>
+                        </ComboBoxItem>
+                        <ComboBoxItem>
+                            <TextBlock>A</TextBlock>
+                        </ComboBoxItem>
+                        <ComboBoxItem>
+                            <TextBlock>B</TextBlock>
+                        </ComboBoxItem>
+                        <ComboBoxItem>
+                            <TextBlock>C</TextBlock>
+                        </ComboBoxItem>
+                        <ComboBoxItem>
+                            <TextBlock>D</TextBlock>
+                        </ComboBoxItem>
+                        <ComboBoxItem>
+                            <TextBlock>No tiene</TextBlock>
+                        </ComboBoxItem>
+                    </ComboBox>
+                    <ComboBox x:Name="combodesplazado" HorizontalAlignment="Left" Margin="411,307,0,0" VerticalAlignment="Top" Width="134" Height="18">
+                        <ComboBoxItem IsSelected="True">
+                            <TextBlock>Seleccione</TextBlock>
+                        </ComboBoxItem>
+                        <ComboBoxItem>
+                            <TextBlock>SI</TextBlock>
+                        </ComboBoxItem>
+                        <ComboBoxItem>
+                            <TextBlock>NO</TextBlock>
+                        </ComboBoxItem>
+                    </ComboBox>
+                    <Label Content="Promedio Gastos" HorizontalAlignment="Left" Margin="567,280,0,0" VerticalAlignment="Top" Height="24" Width="103"/>
+                    <TextBox x:Name="txtgastos" HorizontalAlignment="Left" Margin="569,307,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="134" Height="16"/>
+                    <Label Content="Ayudas Gobierno" HorizontalAlignment="Left" Margin="26,353,0,0" VerticalAlignment="Top" Height="24" Width="103"/>
+                    <ComboBox x:Name="comboayudas" HorizontalAlignment="Left" Margin="22,379,0,0" VerticalAlignment="Top" Width="134" Height="18">
+                        <ComboBoxItem IsSelected="True">
+                            <TextBlock>Seleccione</TextBlock>
+                        </ComboBoxItem>
+                        <ComboBoxItem>
+                            <TextBlock>SI</TextBlock>
+                        </ComboBoxItem>
+                        <ComboBoxItem>
+                            <TextBlock>NO</TextBlock>
+                        </ComboBoxItem>
+                    </ComboBox>
+                    <Label Content="Mascotas" HorizontalAlignment="Left" Margin="255,353,0,0" VerticalAlignment="Top" Height="24" Width="61"/>
+                    <ComboBox x:Name="combomascota" HorizontalAlignment="Left" Margin="255,378,0,0" VerticalAlignment="Top" Width="134" Height="18">
+                        <ComboBoxItem IsSelected="True">
+                            <TextBlock>Seleccione</TextBlock>
+                        </ComboBoxItem>
+                        <ComboBoxItem>
+                            <TextBlock>SI</TextBlock>
+                        </ComboBoxItem>
+                        <ComboBoxItem>
+                            <TextBlock>NO</TextBlock>
+                        </ComboBoxItem>
+                    </ComboBox>
+                    <Button x:Name="btnCreate" Content="Crear" HorizontalAlignment="Left" Margin="747,176,0,0" VerticalAlignment="Top" Background="#FF82E8A4" Width="115" Click="btnCreate_Click" Height="18"/>
+                    <Calendar x:Name="calendario_afil" HorizontalAlignment="Left" Margin="21,207,0,0" VerticalAlignment="Top" Visibility="Hidden" SelectedDatesChanged="calendario_afil_SelectedDatesChanged" Height="166" Width="179"/>
+                    <Calendar x:Name="calendario01" HorizontalAlignment="Left" Margin="516,178,0,0" VerticalAlignment="Top" Visibility="Hidden" SelectedDatesChanged="calendario01_SelectedDatesChanged" Height="166" Width="179"/>
+                    <Label Content="Desplazado" HorizontalAlignment="Left" Margin="409,280,0,0" VerticalAlignment="Top" Height="24" Width="73"/>
+                    <Button x:Name="btnEdit" Content="Editar" HorizontalAlignment="Left" Margin="747,206,0,0" VerticalAlignment="Top" Width="115" Background="#FF82E8A4" Click="btnEdit_Click" Height="18"/>
+                    <Button x:Name="btnDelete1" Content="Eliminar" HorizontalAlignment="Left" Margin="747,241,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Width="115" Background="#FFCBA2E4" Click="btnDelete1_Click" Height="18"/>
+                    <Button x:Name="btnShow" Content="Mostrar" HorizontalAlignment="Left" Margin="747,62,0,0" VerticalAlignment="Top" Width="115" Background="#FF82E8A4" Click="btnShow_Click_1" Height="18"/>
+                    <Button x:Name="Btn_salir" Content="Salir" HorizontalAlignment="Left" Margin="804,411,0,0" VerticalAlignment="Top" Width="58" Background="#FFF98FBB" Click="BtnSalir_Click" Height="18"/>
+                    <Button x:Name="Btn_limpiar" Content="Limpiar" HorizontalAlignment="Left" Margin="747,94,0,0" VerticalAlignment="Top" Width="115" Background="#FF82E8A4" Click="Btn_limpiar_Click" Height="18"/>
+                    <Label Content="Categoria" HorizontalAlignment="Center" Margin="0,353,0,0" VerticalAlignment="Top" Height="24" Width="62"/>
+                    <ComboBox x:Name="combocategoria" HorizontalAlignment="Left" Margin="411,376,0,0" VerticalAlignment="Top" Width="132" Height="20">
+                        <ComboBoxItem IsSelected="True">
+                            <TextBlock>Seleccione</TextBlock>
+                        </ComboBoxItem>
+                        <ComboBoxItem>
+                            <TextBlock>Asociado</TextBlock>
+                        </ComboBoxItem>
+                        <ComboBoxItem>
+                            <TextBlock>Subsidiado</TextBlock>
+                        </ComboBoxItem>
+                        <ComboBoxItem>
+                            <TextBlock>Inactivo</TextBlock>
+                        </ComboBoxItem>
+                    </ComboBox>
+                    <Button x:Name="btnLista_cond" Content="Lista Condicion" HorizontalAlignment="Left" Margin="569,360,0,0" VerticalAlignment="Top" Width="130" Background="#FF82E8A4" Click="btnLista_cond_Click" Height="18"/>
+                    <Button x:Name="btnLista_Cat" Content="Lista Categoria" HorizontalAlignment="Left" Margin="567,402,0,0" VerticalAlignment="Top" Width="132" Background="#FF82E8A4" Click="btnLista_Cat_Click" Height="18"/>
+                    <Button x:Name="btnlista_ninos" Content="Lista Niños" HorizontalAlignment="Left" Margin="747,304,0,0" VerticalAlignment="Top" Width="115" Background="#FF82E8A4" Click="btnlista_ninos_Click" Height="18"/>
+                    <Button x:Name="btnlista_adultos" Content="Lista Adultos" HorizontalAlignment="Left" Margin="747,340,0,0" VerticalAlignment="Top" Width="115" Background="#FF82E8A4" Click="btnlista_adultos_Click" Height="18"/>
+                    <TextBox x:Name="txtlimitaciones" HorizontalAlignment="Left" Margin="26,445,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="127"/>
+                    <Label Content="Limitaciones" HorizontalAlignment="Left" Margin="26,421,0,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="txtanalfabetismo" HorizontalAlignment="Left" Margin="258,445,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="128"/>
+                    <Label Content="Analfabetismo" HorizontalAlignment="Left" Margin="258,420,0,0" VerticalAlignment="Top"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Fundacion" FontFamily="Arial">
+                <Grid>
+                    <Grid.Background>
+                        <ImageBrush ImageSource="/pexels-karolina-grabowska-5485125.jpg"/>
+                    </Grid.Background>
+                    <Label Content="Fundacion" HorizontalAlignment="Left" Margin="30,10,0,0" VerticalAlignment="Top" FontFamily="Arial Rounded MT Bold" FontSize="14"/>
+                    <Label Content="NIT" HorizontalAlignment="Left" Margin="30,70,0,0" VerticalAlignment="Top" FontFamily="Arial Rounded MT Bold"/>
+                    <ComboBox x:Name="combonit" HorizontalAlignment="Left" Margin="30,94,0,0" VerticalAlignment="Top" Width="137">
+                        <ComboBoxItem IsSelected="True">
+                            <TextBlock>900.206.528-7</TextBlock>
+                        </ComboBoxItem>
+                    </ComboBox>
+                    <Label Content="Razon Social" HorizontalAlignment="Left" Margin="222,70,0,0" VerticalAlignment="Top" FontFamily="Arial Rounded MT Bold"/>
+                    <ComboBox x:Name="comborazonsoc" HorizontalAlignment="Left" Margin="222,94,0,0" VerticalAlignment="Top" Width="240">
+                        <ComboBoxItem IsSelected="True">
+                            <TextBlock>Fundacion Nacional de Transplantados</TextBlock>
+                        </ComboBoxItem>
+                    </ComboBox>
+                    <Label Content="Documento Afiliado" HorizontalAlignment="Left" Margin="30,145,0,0" VerticalAlignment="Top" FontFamily="Arial Rounded MT Bold"/>
+                    <TextBox x:Name="txtDocumento_afil_fund" HorizontalAlignment="Left" Margin="32,174,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="135"/>
+                    <Label Content="Tipo de Transplante" HorizontalAlignment="Left" Margin="222,145,0,0" VerticalAlignment="Top" FontFamily="Arial Rounded MT Bold"/>
+                    <ComboBox x:Name="combotransplante" HorizontalAlignment="Left" Margin="222,170,0,0" VerticalAlignment="Top" Width="240">
+                        <ComboBoxItem IsSelected="True">
+                            <TextBlock>Seleccione</TextBlock>
+                        </ComboBoxItem>
+                        <ComboBoxItem>
+                            <TextBlock>Riñon</TextBlock>
+                        </ComboBoxItem>
+                        <ComboBoxItem>
+                            <TextBlock>Pulmon</TextBlock>
+                        </ComboBoxItem>
+                        <ComboBoxItem>
+                            <TextBlock>Higado</TextBlock>
+                        </ComboBoxItem>
+                        <ComboBoxItem>
+                            <TextBlock>Pancreas</TextBlock>
+                        </ComboBoxItem>
+                        <ComboBoxItem>
+                            <TextBlock>Corazon</TextBlock>
+                        </ComboBoxItem>
+                        <ComboBoxItem>
+                            <TextBlock>Instestino</TextBlock>
+                        </ComboBoxItem>
+                        <ComboBoxItem>
+                            <TextBlock>Medula Osea</TextBlock>
+                        </ComboBoxItem>
+                        <ComboBoxItem>
+                            <TextBlock>Cornea</TextBlock>
+                        </ComboBoxItem>
+                        <ComboBoxItem>
+                            <TextBlock>Otro</TextBlock>
+                        </ComboBoxItem>
+                    </ComboBox>
+                    <Label Content="Tutela" HorizontalAlignment="Left" Margin="491,145,0,0" VerticalAlignment="Top" FontFamily="Arial Rounded MT Bold"/>
+                    <ComboBox x:Name="combotutela" HorizontalAlignment="Left" Margin="491,169,0,0" VerticalAlignment="Top" Width="135">
+                        <ComboBoxItem IsSelected="True">
+                            <TextBlock>Seleccione</TextBlock>
+                        </ComboBoxItem>
+                        <ComboBoxItem>
+                            <TextBlock>Si</TextBlock>
+                        </ComboBoxItem>
+                        <ComboBoxItem>
+                            <TextBlock>No</TextBlock>
+                        </ComboBoxItem>
+                    </ComboBox>
+                    <Label Content="Hospedaje" HorizontalAlignment="Left" Margin="491,225,0,0" VerticalAlignment="Top" FontFamily="Arial Rounded MT Bold"/>
+                    <ComboBox x:Name="combohospedaje" HorizontalAlignment="Left" Margin="491,254,0,0" VerticalAlignment="Top" Width="135">
+                        <ComboBoxItem IsSelected="True">
+                            <TextBlock>Seleccione</TextBlock>
+                        </ComboBoxItem>
+                        <ComboBoxItem>
+                            <TextBlock>Si</TextBlock>
+                        </ComboBoxItem>
+                        <ComboBoxItem>
+                            <TextBlock>No</TextBlock>
+                        </ComboBoxItem>
+                    </ComboBox>
+                    <Label Content="Rechazo" HorizontalAlignment="Left" Margin="32,225,0,0" VerticalAlignment="Top" FontFamily="Arial Rounded MT Bold"/>
+                    <ComboBox x:Name="comborechazo" HorizontalAlignment="Left" Margin="32,254,0,0" VerticalAlignment="Top" Width="135">
+                        <ComboBoxItem IsSelected="True">
+                            <TextBlock>Seleccione</TextBlock>
+                        </ComboBoxItem>
+                        <ComboBoxItem>
+                            <TextBlock>Si</TextBlock>
+                        </ComboBoxItem>
+                        <ComboBoxItem>
+                            <TextBlock>No</TextBlock>
+                        </ComboBoxItem>
+                    </ComboBox>
+                    <Label Content="Motivo" HorizontalAlignment="Left" Margin="222,233,0,0" VerticalAlignment="Top" FontFamily="Arial Rounded MT Bold"/>
+                    <TextBox x:Name="txtmotivo" HorizontalAlignment="Left" Margin="222,258,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="240"/>
+                    <Label Content="Informacion Fundacion" HorizontalAlignment="Left" Margin="32,315,0,0" VerticalAlignment="Top" FontFamily="Arial Rounded MT Bold"/>
+                    <ComboBox x:Name="comboinfo_fund" HorizontalAlignment="Left" Margin="32,344,0,0" VerticalAlignment="Top" Width="135">
+                        <ComboBoxItem IsSelected="True">
+                            <TextBlock>Seleccione</TextBlock>
+                        </ComboBoxItem>
+                        <ComboBoxItem>
+                            <TextBlock>WhatsApp</TextBlock>
+                        </ComboBoxItem>
+                        <ComboBoxItem>
+                            <TextBlock>Email</TextBlock>
+                        </ComboBoxItem>
+                        <ComboBoxItem>
+                            <TextBlock>MSM</TextBlock>
+                        </ComboBoxItem>
+                        <ComboBoxItem>
+                            <TextBlock>No Recibe Informacion</TextBlock>
+                        </ComboBoxItem>
+                    </ComboBox>
+                    <Button x:Name="btnCreate_fund" Content="Crear" HorizontalAlignment="Left" Margin="697,96,0,0" VerticalAlignment="Top" Width="110" Background="#FF82E8A4" Click="btnCreate_fund_Click"/>
+                    <Button x:Name="btnEditar_infofundacion" Content="Editar" HorizontalAlignment="Left" Margin="697,151,0,0" VerticalAlignment="Top" Width="110" Background="#FF82E8A4" Click="btnEditar_infofundacion_Click"/>
+                    <Button x:Name="btnDelete_fund" Content="Eliminar" HorizontalAlignment="Left" Margin="697,318,0,0" VerticalAlignment="Top" Width="110" Background="#FFCBA2E4" Click="btnDelete_fund_Click"/>
+                    <Button x:Name="BtnSalir_Copy" Content="Salir" HorizontalAlignment="Left" Margin="769,394,0,0" VerticalAlignment="Top" Width="58" Background="#FFF98FBB" Click="BtnSalir_Click"/>
+                    <Button x:Name="btnmostrar_datos_fund" Content="Mostrar" HorizontalAlignment="Left" Margin="697,211,0,0" VerticalAlignment="Top" Width="110" Background="#FF82E8A4" Click="btnmostrar_datos_fund_Click"/>
+                    <Button Content="Limpiar" HorizontalAlignment="Left" Margin="697,266,0,0" VerticalAlignment="Top" Width="110" Background="#FF82E8A4" Click="Button_Click"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Contacto" FontFamily="Arial">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+
+                    </Grid.ColumnDefinitions>
+                    <Grid.Background>
+                        <ImageBrush ImageSource="/pexels-karolina-grabowska-5485125.jpg"/>
+                    </Grid.Background>
+                    <TextBox x:Name="txtid_contacto" HorizontalAlignment="Left" Margin="33,143,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="134"/>
+                    <Label Content="ID Contacto" HorizontalAlignment="Left" Margin="33,119,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Datos Contacto de Emergencia" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontSize="14" FontWeight="Bold" Grid.ColumnSpan="2"/>
+                    <Label Content="Nombres" HorizontalAlignment="Left" Margin="243,119,0,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="txtNombre_contacto" HorizontalAlignment="Left" Margin="243,143,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="134"/>
+                    <Label Content="Apellidos" HorizontalAlignment="Left" Margin="447,119,0,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="txtapellidos_contacto" HorizontalAlignment="Left" Margin="447,143,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="134"/>
+                    <Label Content="Parentesco" HorizontalAlignment="Left" Margin="33,204,0,0" VerticalAlignment="Top"/>
+                    <ComboBox x:Name="comboparentesco" Margin="33,233,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="134">
+                        <ComboBoxItem IsSelected="True">
+                            <TextBlock>Seleccione</TextBlock>
+                        </ComboBoxItem>
+                        <ComboBoxItem>
+                            <TextBlock>Conyugue</TextBlock>
+                        </ComboBoxItem>
+                        <ComboBoxItem>
+                            <TextBlock>Compañero(a) Permanente</TextBlock>
+                        </ComboBoxItem>
+                        <ComboBoxItem>
+                            <TextBlock>Madre</TextBlock>
+                        </ComboBoxItem>
+                        <ComboBoxItem>
+                            <TextBlock>Padre</TextBlock>
+                        </ComboBoxItem>
+                        <ComboBoxItem>
+                            <TextBlock>Hijo(a)</TextBlock>
+                        </ComboBoxItem>
+                        <ComboBoxItem>
+                            <TextBlock>Abuelo(a)</TextBlock>
+                        </ComboBoxItem>
+                        <ComboBoxItem>
+                            <TextBlock>Hermano(a)</TextBlock>
+                        </ComboBoxItem>
+                        <ComboBoxItem>
+                            <TextBlock>Tio(a)</TextBlock>
+                        </ComboBoxItem>
+                        <ComboBoxItem>
+                            <TextBlock>Primo(a)</TextBlock>
+                        </ComboBoxItem>
+                        <ComboBoxItem>
+                            <TextBlock>Sobrino(a)</TextBlock>
+                        </ComboBoxItem>
+                        <ComboBoxItem>
+                            <TextBlock>Otro</TextBlock>
+                        </ComboBoxItem>
+                    </ComboBox>
+                    <Label Content="Telefono" HorizontalAlignment="Left" Margin="243,205,0,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="txttelefono_contacto" HorizontalAlignment="Left" Margin="243,235,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="134"/>
+                    <Label Content="Celular" HorizontalAlignment="Left" Margin="447,204,0,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="txtcelular_contacto" HorizontalAlignment="Left" Margin="447,235,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="134"/>
+                    <Label Content="Direccion" HorizontalAlignment="Left" Margin="33,306,0,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="txtDireccion_contacto" HorizontalAlignment="Left" Margin="33,330,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="134"/>
+                    <Label Content="Ciudad" HorizontalAlignment="Left" Margin="248,310,0,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="txtCiudad_contacto" HorizontalAlignment="Left" Margin="243,331,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="134"/>
+                    <Label Content="Email" HorizontalAlignment="Left" Margin="451,310,0,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="txtemail_contacto" HorizontalAlignment="Left" Margin="447,331,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="134"/>
+                    <Button x:Name="btn_ingresar_contacto" Content="Ingresar" HorizontalAlignment="Left" Margin="697,84,0,0" VerticalAlignment="Top" Width="115" Background="#FF82E8A4" Click="btn_ingresar_contacto_Click"/>
+                    <Button x:Name="btneditar_contacto" Content="Editar" HorizontalAlignment="Left" Margin="697,274,0,0" VerticalAlignment="Top" Width="115" Background="#FF82E8A4" Click="btneditar_contacto_Click"/>
+                    <Button x:Name="btneliminar_contacto" Content="Eliminar" HorizontalAlignment="Left" Margin="697,339,0,0" VerticalAlignment="Top" Width="115" Background="#FFCBA2E4"/>
+                    <Label Content="ID Afiliado" HorizontalAlignment="Left" Margin="33,50,0,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="txtid_Afiliado" HorizontalAlignment="Left" Margin="33,74,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="134"/>
+                    <Button x:Name="btn_mostrar_contacto" Content="Mostrar" HorizontalAlignment="Left" Margin="697,208,0,0" VerticalAlignment="Top" Width="115" Background="#FF82E8A4" Click="btn_mostrar_contacto_Click"/>
+                    <Button x:Name="btnLimpiar_contacto" Content="Limpiar" HorizontalAlignment="Left" Margin="697,147,0,0" VerticalAlignment="Top" Width="115" Background="#FF82E8A4" Click="btnLimpiar_contacto_Click"/>
+                    <Button x:Name="BtnSalir_Copy1" Content="Salir" HorizontalAlignment="Left" Margin="769,394,0,0" VerticalAlignment="Top" Width="58" Background="#FFF98FBB" Click="BtnSalir_Click"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Pagos" FontFamily="Arial">
+                <Grid>
+                    <Grid.Background>
+                        <ImageBrush ImageSource="/pexels-karolina-grabowska-5485125.jpg"/>
+                    </Grid.Background>
+                    <Label Content="Documento Afiliado" HorizontalAlignment="Left" Margin="29,71,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Pagos" HorizontalAlignment="Left" Margin="29,18,0,0" VerticalAlignment="Top" FontSize="16" FontFamily="Arial Rounded MT Bold"/>
+                    <TextBox x:Name="txtDoc_afil_pagos" HorizontalAlignment="Left" Margin="29,100,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="128"/>
+                    <Label Content="Cuota" HorizontalAlignment="Left" Margin="29,144,0,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="txtcuota" HorizontalAlignment="Left" Margin="29,173,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="128"/>
+                    <Label Content="Fecha de Pago" HorizontalAlignment="Left" Margin="29,0,0,0" VerticalAlignment="Center"/>
+                    <TextBox x:Name="txtfecha_pago" HorizontalAlignment="Left" Margin="29,246,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="154"/>
+                    <Label Content="Valor" HorizontalAlignment="Left" Margin="467,149,0,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="txtvalor_subsidio" HorizontalAlignment="Left" Margin="467,173,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="148"/>
+                    <Label Content="Concepto" HorizontalAlignment="Left" Margin="667,148,0,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="txtconcepto_subs" HorizontalAlignment="Left" Margin="667,173,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="128"/>
+                    <Label Content="Fecha Entrega" HorizontalAlignment="Left" Margin="466,0,0,0" VerticalAlignment="Center"/>
+                    <TextBox x:Name="txtfechaentrega_subs" HorizontalAlignment="Left" Margin="469,244,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="163"/>
+                    <Image x:Name="FP" HorizontalAlignment="Left" Height="18" Margin="188,244,0,0" VerticalAlignment="Top" Width="21" Source="/calendar-icon_34471.png" PreviewMouseLeftButtonDown="FP_PreviewMouseLeftButtonDown"/>
+                    <Image x:Name="FE" HorizontalAlignment="Left" Height="18" Margin="637,242,0,0" VerticalAlignment="Top" Width="21" Source="/calendar-icon_34471.png" PreviewMouseLeftButtonDown="FE_PreviewMouseLeftButtonDown"/>
+                    <Label Content="Subsidios" HorizontalAlignment="Left" Margin="469,18,0,0" VerticalAlignment="Top" FontSize="16" FontFamily="Arial Rounded MT Bold"/>
+                    <Button x:Name="btnEditar_pago" Content="Editar Pago" HorizontalAlignment="Left" Margin="194,299,0,0" VerticalAlignment="Top" Width="115" Background="#FF82E8A4" Click="btnEditar_pago_Click"/>
+                    <Button x:Name="btnEliminar_pago" Content="Eliminar Pago" HorizontalAlignment="Left" Margin="29,361,0,0" VerticalAlignment="Top" Width="115" Background="#FFCBA2E4" Click="btnEliminar_pago_Click"/>
+                    <TextBox x:Name="txtid_pago" HorizontalAlignment="Left" Margin="194,100,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                    <Label Content="ID Pago" HorizontalAlignment="Left" Margin="194,71,0,0" VerticalAlignment="Top"/>
+                    <Button x:Name="btnIngresar_sub" Content="Ingresar Subsidio" HorizontalAlignment="Left" Margin="469,299,0,0" VerticalAlignment="Top" Width="116" Background="#FF82E8A4" Click="btnIngresar_sub_Click"/>
+                    <Button x:Name="btnEditar_sub" Content="Editar Subsidio" HorizontalAlignment="Left" Margin="645,299,0,0" VerticalAlignment="Top" Width="115" Background="#FF82E8A4" Click="btnEditar_sub_Click"/>
+                    <Button x:Name="btnEliminar_sub" Content="Eliminar Subsidio" HorizontalAlignment="Left" Margin="470,361,0,0" VerticalAlignment="Top" Width="115" Background="#FFCBA2E4" Click="btnEliminar_sub_Click"/>
+                    <Label Content="Documento Afiliado" HorizontalAlignment="Left" Margin="467,71,0,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="txtDoc_afil_subs" HorizontalAlignment="Left" Margin="467,100,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
+                    <Button x:Name="BtnSalir_Copy2" Content="Salir" HorizontalAlignment="Left" Margin="779,401,0,0" VerticalAlignment="Top" Width="58" Background="#FFF98FBB" Click="BtnSalir_Click"/>
+                    <Label Content="Concepto" HorizontalAlignment="Left" Margin="194,144,0,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="txtconcepto_pago" HorizontalAlignment="Left" Margin="194,173,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                    <Label Content="ID Subsidio" HorizontalAlignment="Left" Margin="667,71,0,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="txtid_subs" HorizontalAlignment="Left" Margin="667,100,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="128"/>
+                    <Button x:Name="btnIngresar_pago" Content="Ingresar Pago" HorizontalAlignment="Left" Margin="29,299,0,0" VerticalAlignment="Top" Width="115" Background="#FF82E8A4" Click="btnIngresar_pago_Click"/>
+                    <Button x:Name="btnMostrar_pagos" Content="Mostrar Pagos" HorizontalAlignment="Left" Margin="197,361,0,0" VerticalAlignment="Top" Width="112" Background="#FF82E8A4" Click="btnMostrar_pagos_Click"/>
+                    <Calendar x:Name="Calendario_pago" HorizontalAlignment="Left" Margin="27,241,0,0" VerticalAlignment="Top" SelectedDatesChanged="Calendario_pago_SelectedDatesChanged" Visibility="Hidden"/>
+                    <Button x:Name="btn_mostrar_sub" Content="Mostrar Subsidios" HorizontalAlignment="Left" Margin="646,361,0,0" VerticalAlignment="Top" Width="114" Background="#FF82E8A4" Click="btn_mostrar_sub_Click"/>
+                    <Calendar x:Name="calen_fecha_sub" HorizontalAlignment="Left" Margin="452,242,0,0" VerticalAlignment="Top" Visibility="Hidden" SelectedDatesChanged="calen_fecha_sub_SelectedDatesChanged"/>
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>

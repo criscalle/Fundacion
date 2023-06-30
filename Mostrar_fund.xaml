@@ -1,0 +1,30 @@
+﻿<Window x:Class="Fundacion.Mostrar_fund"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Fundacion"
+        mc:Ignorable="d"
+        Title="Mostrar_fund" Height="450" Width="800">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="/pexels-karolina-grabowska-5485125.jpg"/>
+        </Grid.Background>
+        <Label Content="Documento Afiliado" HorizontalAlignment="Left" Margin="40,59,0,0" VerticalAlignment="Top" FontFamily="Arial Rounded MT Bold"/>
+        <TextBox x:Name="txtmostrar_afilfun" HorizontalAlignment="Left" Margin="44,88,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="141" FontFamily="Arial Rounded MT Bold" IsReadOnly="True"/>
+        <Label Content="Tipo de Transplante" HorizontalAlignment="Left" Margin="40,145,0,0" VerticalAlignment="Top" FontFamily="Arial Rounded MT Bold"/>
+        <TextBox x:Name="txtmostrartipo_tran" HorizontalAlignment="Left" Margin="44,169,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="141" FontFamily="Arial Rounded MT Bold" IsReadOnly="True"/>
+        <Label Content="Tutela" HorizontalAlignment="Left" Margin="245,145,0,0" VerticalAlignment="Top" FontFamily="Arial Rounded MT Bold"/>
+        <TextBox x:Name="txtmostrartutela_fun" HorizontalAlignment="Left" Margin="245,169,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="141" FontFamily="Arial Rounded MT Bold" IsReadOnly="True"/>
+        <Label Content="Rechazo" HorizontalAlignment="Left" Margin="443,145,0,0" VerticalAlignment="Top" FontFamily="Arial Rounded MT Bold"/>
+        <TextBox x:Name="txtmostrar_rechazo" HorizontalAlignment="Left" Margin="443,169,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="141" FontFamily="Arial Rounded MT Bold" IsReadOnly="True"/>
+        <Label Content="Motivo" HorizontalAlignment="Left" Margin="40,217,0,0" VerticalAlignment="Top" FontFamily="Arial Rounded MT Bold"/>
+        <TextBox x:Name="txtmostrarmotivo_fun" HorizontalAlignment="Left" Margin="44,241,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="141" FontFamily="Arial Rounded MT Bold" IsReadOnly="True"/>
+        <Label Content="Hospedaje" HorizontalAlignment="Left" Margin="245,217,0,0" VerticalAlignment="Top" FontFamily="Arial Rounded MT Bold"/>
+        <TextBox x:Name="txtmostrarhosped" HorizontalAlignment="Left" Margin="245,241,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="141" FontFamily="Arial Rounded MT Bold" IsReadOnly="True"/>
+        <Label Content="Info Fundacion" HorizontalAlignment="Left" Margin="443,217,0,0" VerticalAlignment="Top" FontFamily="Arial Rounded MT Bold"/>
+        <TextBox x:Name="txtmostrarinfo_fun" HorizontalAlignment="Left" Margin="443,241,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="141" FontFamily="Arial Rounded MT Bold" IsReadOnly="True"/>
+        <Button Content="Volver" HorizontalAlignment="Left" Margin="655,324,0,0" VerticalAlignment="Top" Width="95" Background="#FFF98FBB" Click="Button_Click"/>
+
+    </Grid>
+</Window>
